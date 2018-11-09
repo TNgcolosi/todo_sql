@@ -19,16 +19,28 @@ require("config.php");
          return false;
 
      } 
-     
-     $sql = "DELETE FROM todos WHERE id =  '. $id . ' ";
+         $sql = 'DELETE FROM todos WHERE id ='. $id.';';
+    //  $result = mysqli_query($conn, $sql);
+    //  if ($result===false) {
+    //      return mysqli_error($conn);
+    //  }  else {
+    //         return "success";
+    //     }
      if (mysqli_query($conn, $sql)) {
          echo "deleted";
-     } else {
+     }  else {
          echo "error: " . mysqli_error($conn);
-     }
+        }
      mysqli_close($conn);
  }
 
+
+
+
+
+
+
+ 
  
 
 //  function get_todos() {
@@ -36,16 +48,24 @@ require("config.php");
 
 //     if (!$conn) {
 //         return false;
+//     } echo "connection created";
 
-//      $sql = "SELECT * from TODOS"; 
+//      $sql = 'INSERT INTO todos (task, due_date) VALUES ("' . $_POST['task'] . '", "' . $_POST['due_date'] .'")'; 
 //      $todos = mysqli_query($conn, $sql);
-    
-//      if (mysqli_num_rows($todos) > 0) {
-//       $todos = [];
-//       <?php while($row = mysqli_fetch_assoc($todos)) {
-//           $rows = $todos[];
-//       }
-//     }
-//  }
+
+//      //check if there is an error
+//        if ($todos == false) {
+//          echo mysqli_error($conn);
+//        } 
+     
+//     //Marcus way - an attempt
+//     //  if (mysqli_num_rows($todos) > 0) {
+//     //   $todos = [];
+//     //   while($row = mysqli_fetch_assoc($todos)) {
+//     //       $row['task'] = $todos;
+//     //   }
+//     // }
+//     mysqli_close($conn);
+// } 
 
 ?>

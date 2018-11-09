@@ -33,8 +33,8 @@ if(isset($_POST['add_todo'])) {
 }
 
 if(isset($_POST['delete'])) {
-  delete_task($_POST['delete']);
-
+  echo delete_task($_POST['delete']);
+  
 }
 
 
@@ -57,7 +57,10 @@ if(isset($_POST['delete'])) {
         <form method="post" action="">
       <ul class="list-group">
         <?php while($row = mysqli_fetch_assoc($todos)) : ?>
-          <li class="list-group-item"><?php echo $row['task']; ?><button type="submit" class="btn btn-danger float-right" value="<?php $row['id']; ?>" name="delete">Delete</button></li>
+          <li class="list-group-item"><?php echo $row['task']; ?>
+            <button type="submit" class="btn btn-danger float-right" value="<?php echo $row['id']; ?>" name="delete">Delete</button>
+            <button type="button" class="btn btn-light float-right"><?php echo $row['due_date']; ?></button>
+          </li>
         <?php endwhile; ?>
       </ul>
         <?php endif ?>
