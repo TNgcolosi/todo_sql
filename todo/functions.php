@@ -27,9 +27,14 @@ require("config.php");
     //         return "success";
     //     }
      if (mysqli_query($conn, $sql)) {
-         echo "deleted";
+         echo "<div class='alert alert-warning alert-dismissible fade show ' role='alert'>
+                <strong>Task Deleted</strong> 
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+               </div>";
      }  else {
-         echo "error: " . mysqli_error($conn);
+         echo "Error occurred: " . mysqli_error($conn);
         }
      mysqli_close($conn);
  }
@@ -40,7 +45,7 @@ require("config.php");
 
 
 
- 
+
  
 
 //  function get_todos() {

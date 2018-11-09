@@ -34,6 +34,7 @@ if(isset($_POST['add_todo'])) {
 
 if(isset($_POST['delete'])) {
   echo delete_task($_POST['delete']);
+
   
 }
 
